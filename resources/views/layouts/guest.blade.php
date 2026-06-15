@@ -20,6 +20,9 @@
         };
     </script>
 
+    <link rel="icon" type="image/png" href="{{ asset('images/icone-logo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/icone-logo.png') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
