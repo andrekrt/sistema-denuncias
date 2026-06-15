@@ -125,7 +125,7 @@ class DenunciaPublicController extends Controller
     {
         do {
             $protocolo = 'FRB-' . now()->format('Y') . '-' . str_pad((string) random_int(1, 99999), 6, '0', STR_PAD_LEFT);
-        } while (Denuncia::where('protoco', $protocolo)->exists());
+        } while (Denuncia::where('protocolo', $protocolo)->exists());
 
         return $protocolo;
     }
