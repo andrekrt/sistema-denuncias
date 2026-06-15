@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\NovaDenunciaRegistrada;
 use App\Models\Denuncia;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -30,7 +31,7 @@ class DenunciaPublicController extends Controller
                 'nome' => ['nullable', 'string', 'max:255'],
                 'email' => ['nullable', 'email', 'max:255'],
                 'telefone' => ['nullable', 'string', 'max:50'],
-                'anexos*' => ['nullable', 'array', 'max:5'],
+                'anexos' => ['nullable', 'array', 'max:5'],
                 'anexos.*' => ['file', 'max:5120', 'mimes:jpg,jpeg,png,pdf,doc,docx'],
             ],
             [
@@ -101,9 +102,16 @@ class DenunciaPublicController extends Controller
             }
         }
 
-        $emailsDestino = config('denuncias.emails_destino');
+        $emailsUsuarios = User::query()->whereIn('perfil',[
+            User::PERFIL_ADMIN,
+            User::PERFIL_COMITE,
+        ])->pluck('email');
 
-        if (! empty($emailsDestino)) {
+        $emailsInstitucionais = collect(config('denuncias.emails_destino',[]));
+
+        $emailsDestino = $emailsUsuarios->merge($emailsInstitucionais)->filter()->unique()->values()->all();
+
+        if(!empty($emailsDestino)){
             Mail::to($emailsDestino)->send(new NovaDenunciaRegistrada($denuncia));
         }
 
