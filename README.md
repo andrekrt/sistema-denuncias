@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Canal de Denúncias Friobom
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema interno desenvolvido para a **Friobom Distribuidora**, com o objetivo de disponibilizar um canal seguro, organizado e confidencial para o registro, acompanhamento e gestão de denúncias.
 
-## About Laravel
+O canal permite que colaboradores, terceiros ou demais partes interessadas registrem relatos relacionados a condutas inadequadas, irregularidades, conflitos, assédio, discriminação, fraudes, riscos à segurança do trabalho ou outros temas relevantes para a empresa.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Objetivo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O Canal de Denúncias Friobom tem como finalidade fortalecer a transparência, a ética e a responsabilidade dentro da organização, oferecendo um meio formal para o recebimento e tratamento de denúncias.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O sistema foi criado para permitir que as denúncias sejam registradas de forma simples, segura e, quando desejado, anônima.
 
-## Learning Laravel
+## Como funciona
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+O usuário acessa o formulário público do canal e registra uma denúncia informando os dados do ocorrido, como tipo da denúncia, descrição, local, envolvidos, testemunhas e anexos, quando houver.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Ao finalizar o envio, o sistema gera automaticamente um número de protocolo e uma senha de acompanhamento. Essas informações devem ser guardadas pelo denunciante, pois permitem consultar posteriormente o andamento da denúncia.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+O denunciante pode optar por se identificar ou registrar a denúncia de forma anônima. Quando a opção anônima é selecionada, os campos de identificação pessoal não são armazenados.
 
-## Laravel Sponsors
+## Acompanhamento da denúncia
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Após o registro, o denunciante pode acessar a área de acompanhamento utilizando o protocolo e a senha gerados pelo sistema.
 
-### Premium Partners
+Nessa área, é possível visualizar o status atual da denúncia e eventuais mensagens enviadas pela equipe responsável, desde que estejam marcadas como visíveis ao denunciante.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Painel administrativo
 
-## Contributing
+O sistema possui uma área administrativa restrita para usuários autorizados. Nessa área, é possível consultar, filtrar, analisar e acompanhar as denúncias recebidas.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+O painel permite visualizar os detalhes da denúncia, alterar o status, registrar comentários internos, enviar mensagens ao denunciante, baixar anexos e consultar o histórico de ações realizadas.
 
-## Code of Conduct
+## Perfis de acesso
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+O sistema possui diferentes níveis de acesso:
 
-## Security Vulnerabilities
+### Administrador
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Usuário com acesso completo ao sistema. Pode gerenciar denúncias, usuários, auditoria, comentários, mensagens, anexos e configurações operacionais relacionadas ao painel.
 
-## License
+### Comitê
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Usuário responsável pela análise e tratamento das denúncias. Pode acessar denúncias, alterar status, registrar comentários internos, enviar mensagens ao denunciante e baixar anexos.
+
+### Visualizador
+
+Usuário com acesso apenas para consulta. Pode visualizar denúncias e informações do painel, mas não pode alterar status, comentar, enviar mensagens ou gerenciar usuários.
+
+## Status das denúncias
+
+As denúncias podem passar por diferentes status durante o processo de análise:
+
+* Recebida
+* Em análise
+* Em apuração
+* Aguardando informações
+* Concluída
+* Arquivada
+
+Esses status ajudam a organizar o fluxo de tratamento e permitem maior controle sobre o andamento de cada caso.
+
+## Notificações por e-mail
+
+Quando uma nova denúncia é registrada, o sistema envia uma notificação por e-mail para os usuários responsáveis, como administradores e membros do comitê.
+
+O sistema também envia e-mails relacionados à recuperação de senha dos usuários cadastrados no painel administrativo.
+
+## Segurança e confidencialidade
+
+O Canal de Denúncias Friobom foi estruturado para preservar a confidencialidade das informações registradas.
+
+As denúncias anônimas não armazenam dados de identificação do denunciante. O acesso administrativo é protegido por autenticação, e as ações relevantes realizadas no sistema são registradas para fins de auditoria.
+
+## Auditoria
+
+O sistema mantém registros das principais ações realizadas no painel administrativo, como alterações de status, comentários internos, mensagens enviadas ao denunciante, criação ou edição de usuários e download de anexos.
+
+Esses registros auxiliam no controle interno e na rastreabilidade das ações realizadas dentro do sistema.
+
+## Anexos
+
+O denunciante pode incluir arquivos relacionados à denúncia, como imagens, documentos em PDF ou arquivos de texto.
+
+Os anexos ficam disponíveis apenas para usuários autorizados dentro do painel administrativo.
+
+## Identidade visual
+
+O sistema utiliza a identidade visual institucional da Friobom Distribuidora, com layout personalizado, cores da marca e aplicação dos logotipos oficiais da empresa.
+
+## Uso interno
+
+Este sistema foi desenvolvido para uso institucional da Friobom Distribuidora e deve ser utilizado exclusivamente para o recebimento, acompanhamento e gestão de denúncias relacionadas ao ambiente organizacional e às relações vinculadas à empresa.
